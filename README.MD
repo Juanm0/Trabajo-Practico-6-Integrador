@@ -11,10 +11,9 @@ Se desarrolla el modelo **PetCare**, un sistema de gestión veterinaria destinad
 Diseñar e implementar webapp funcional en PHP conectada a la base de datos diseñada en el TP5:
 
 - **Funcionalidades**: Conexión a BD, ABM (CRUD), registro/login, sesiones, cambio de contraseña y control de acceso por roles (Admin, Usuario común y Rol especializado).
-- **Git**:Trabajo continuo en el repositorio (se evaluará el historial de commits).
-- **Despliegue**:El sistema debe estar subido y funcional en un hosting gratuito (ej. InfinityFree).
-- Inserción de datos de prueba.
-- Diseño y generación del Diagrama Entidad-Relación (DER).
+- **Git**: Trabajo continuo en el repositorio (se evaluará el historial de commits).
+- **Despliegue**: El sistema debe estar subido y funcional en un hosting gratuito (ej. InfinityFree).
+- **Documentación**:  Incluir script de la base de datos en /database, usuarios de prueba y archivo README.md.
 
 ## 🗂️ Modelo de datos
 
@@ -32,6 +31,10 @@ La base de datos está compuesta por cuatro entidades principales:
 ## 📄 Consigna del Trabajo Práctico
 
 [📥 Abrir consigna original en PDF](assets/consigna.pdf)
+
+## 📄 Guia complementaria
+
+[✌️ Abrir guía complementaria en PDF](assets/complement.pdf)
 
 ## 💾 Archivos del proyecto
 
