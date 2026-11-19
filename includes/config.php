@@ -16,7 +16,7 @@ define('DB_CHARSET', 'utf8mb4');
 
 
 define('APP_NAME', 'PetCare');
-define('APP_URL', 'http://localhost/TP6_INTEGRADOR'); 
+define('APP_URL', 'http://localhost/tpr'); 
 
 
 define('BASE_PATH', dirname(__DIR__));
