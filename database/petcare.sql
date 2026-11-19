@@ -93,17 +93,3 @@ INSERT INTO consultas (fecha_consulta, motivo, diagnostico, precio, id_mascota, 
 
 CREATE INDEX idx_consultas_fecha ON consultas(fecha_consulta);
 
-CREATE VIEW vista_mascotas_completa AS
-SELECT m.*, c.nombre AS cliente_nombre, c.apellido AS cliente_apellido, c.dni AS cliente_dni, c.telefono AS cliente_telefono
-FROM mascotas m
-JOIN clientes c ON m.id_cliente = c.id_cliente;
-
-CREATE VIEW vista_consultas_completa AS
-SELECT c.*,
-       m.nombre AS mascota_nombre, m.especie, m.raza, m.sexo,
-       cli.nombre AS cliente_nombre, cli.apellido AS cliente_apellido, cli.telefono AS cliente_telefono,
-       v.nombre AS vet_nombre, v.apellido AS vet_apellido, v.especialidad, v.numero_registro
-FROM consultas c
-JOIN mascotas m ON c.id_mascota = m.id_mascota
-JOIN clientes cli ON m.id_cliente = cli.id_cliente
-JOIN veterinarios v ON c.id_veterinario = v.id_veterinario;
