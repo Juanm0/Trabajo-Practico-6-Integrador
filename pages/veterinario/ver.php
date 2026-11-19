@@ -1,5 +1,7 @@
 ﻿<?php
-
+/**
+ * Ver Veterinario - PetCare
+ */
 require_once dirname(__DIR__, 2) . '/includes/config.php';
 require_once dirname(__DIR__, 2) . '/includes/auth.php';
 require_once dirname(__DIR__, 2) . '/includes/functions.php';
@@ -18,7 +20,7 @@ if (!$vet) {
     exit;
 }
 
-
+// Obtener consultas de este veterinario
 $db = getDB();
 $stmt = $db->prepare("SELECT c.*, m.nombre as mascota_nombre, cli.nombre as cliente_nombre, cli.apellido as cliente_apellido
                       FROM consultas c

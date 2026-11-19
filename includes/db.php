@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Conexión a la base de datos - PetCare
+ */
 require_once __DIR__ . '/config.php';
 
 class Database {
@@ -32,7 +34,7 @@ class Database {
     }
 }
 
-
+// Función helper para obtener la conexión
 function getDB() {
     return Database::getInstance()->getConnection();
 }

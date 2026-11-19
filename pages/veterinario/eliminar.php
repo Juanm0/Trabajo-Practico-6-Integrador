@@ -1,5 +1,7 @@
 ﻿<?php
-
+/**
+ * Eliminar Veterinario - PetCare
+ */
 require_once dirname(__DIR__, 2) . '/includes/config.php';
 require_once dirname(__DIR__, 2) . '/includes/auth.php';
 require_once dirname(__DIR__, 2) . '/includes/functions.php';
@@ -10,7 +12,7 @@ requireRole(['Admin']);
 $id = $_GET['id'] ?? 0;
 
 if ($id) {
-    
+    // Verificar si tiene consultas
     $db = getDB();
     $stmt = $db->prepare("SELECT COUNT(*) FROM consultas WHERE id_veterinario = ?");
     $stmt->execute([$id]);

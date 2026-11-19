@@ -1,5 +1,7 @@
 ﻿<?php
-
+/**
+ * Editar Mascota - PetCare
+ */
 require_once dirname(__DIR__, 2) . '/includes/config.php';
 require_once dirname(__DIR__, 2) . '/includes/auth.php';
 require_once dirname(__DIR__, 2) . '/includes/functions.php';
@@ -18,7 +20,7 @@ if (!$mascota) {
     exit;
 }
 
-
+// Obtener lista de clientes
 $db = getDB();
 $stmt = $db->query("SELECT id_cliente, dni, nombre, apellido FROM clientes ORDER BY apellido, nombre");
 $clientes = $stmt->fetchAll();

@@ -16,7 +16,7 @@ define('DB_CHARSET', 'utf8mb4');
 
 
 define('APP_NAME', 'PetCare');
-define('APP_URL', 'https://juanjuanjuan.freedev.app/'); 
+define('APP_URL', 'https://juanjuanjuan.freedev.app/tp6');
 
 
 define('BASE_PATH', dirname(__DIR__));

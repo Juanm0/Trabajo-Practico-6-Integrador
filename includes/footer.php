@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Footer común - PetCare
+ */
 ?>
     </main>
     

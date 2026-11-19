@@ -1,10 +1,12 @@
 <?php
-
+/**
+ * Registro - PetCare
+ */
 require_once __DIR__ . '/../../includes/config.php';
 require_once __DIR__ . '/../../includes/auth.php';
 require_once __DIR__ . '/../../includes/db.php';
 
-
+// Si ya está logueado, redirigir al dashboard
 if (isLoggedIn()) {
     header('Location: ' . APP_URL . '/index.php');
     exit;
@@ -29,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif (strlen($password) < 6) {
         $error = 'La contraseña debe tener al menos 6 caracteres';
     } else {
-        $result = register($nombre, $apellido, $email, $password, $telefono, 3); 
+        $result = register($nombre, $apellido, $email, $password, $telefono, 3); // Rol por defecto: Usuario común
         if ($result['success']) {
             $success = 'Registro exitoso. <a href="' . APP_URL . '/pages/auth/login.php">Inicia sesión</a>';
         } else {

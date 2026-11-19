@@ -1,14 +1,20 @@
 <?php
-
+/**
+ * Funciones de autenticación y autorización - PetCare
+ */
 require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/db.php';
 
-
+/**
+ * Verifica si el usuario ha iniciado sesión
+ */
 function isLoggedIn() {
     return isset($_SESSION['user_id']);
 }
 
-
+/**
+ * Obtiene el usuario actual
+ */
 function getCurrentUser() {
     if (!isLoggedIn()) return null;
     
@@ -18,7 +24,9 @@ function getCurrentUser() {
     return $stmt->fetch();
 }
 
-
+/**
+ * Redirige si no está logueado
+ */
 function requireLogin() {
     if (!isLoggedIn()) {
         header('Location: ' . APP_URL . '/pages/auth/login.php');
@@ -26,7 +34,9 @@ function requireLogin() {
     }
 }
 
-
+/**
+ * Redirige si no tiene el rol requerido
+ */
 function requireRole($roles) {
     requireLogin();
     $user = getCurrentUser();
@@ -36,7 +46,9 @@ function requireRole($roles) {
     }
 }
 
-
+/**
+ * Login de usuario
+ */
 function login($email, $password) {
     $db = getDB();
     $stmt = $db->prepare("SELECT u.*, r.nombre as rol_nombre FROM usuarios u LEFT JOIN roles r ON u.id_rol = r.id_rol WHERE u.email = ? AND u.activo = 1");
@@ -53,18 +65,22 @@ function login($email, $password) {
     return false;
 }
 
-
+/**
+ * Logout
+ */
 function logout() {
     session_destroy();
     header('Location: ' . APP_URL . '/pages/auth/login.php');
     exit;
 }
 
-
+/**
+ * Registrar usuario
+ */
 function register($nombre, $apellido, $email, $password, $telefono = null, $id_rol = 3) {
     $db = getDB();
     
-    
+    // Verificar si el email ya existe
     $stmt = $db->prepare("SELECT id_usuario FROM usuarios WHERE email = ?");
     $stmt->execute([$email]);
     if ($stmt->fetch()) {
@@ -78,7 +94,9 @@ function register($nombre, $apellido, $email, $password, $telefono = null, $id_r
     return ['success' => true, 'message' => 'Registro exitoso'];
 }
 
-
+/**
+ * Cambiar contraseña
+ */
 function changePassword($userId, $currentPassword, $newPassword) {
     $db = getDB();
     $stmt = $db->prepare("SELECT password FROM usuarios WHERE id_usuario = ?");
@@ -96,7 +114,9 @@ function changePassword($userId, $currentPassword, $newPassword) {
     return ['success' => true, 'message' => 'Contraseña cambiada exitosamente'];
 }
 
-
+/**
+ * Obtener todos los roles
+ */
 function getRoles() {
     $db = getDB();
     $stmt = $db->query("SELECT * FROM roles");
