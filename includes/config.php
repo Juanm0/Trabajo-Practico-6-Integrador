@@ -3,7 +3,7 @@
 
 
 define('DB_HOST', 'sql211.infinityfree.com');
-define('DB_NAME', 'if0_43012718_basetp5');
+define('DB_NAME', 'if0_43012718_petcaredb');
 define('DB_USER', 'if0_43012718');
 define('DB_PASS', 'browtf1234isood');
 define('DB_CHARSET', 'utf8mb4');
