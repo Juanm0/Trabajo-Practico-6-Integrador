@@ -1,11 +1,9 @@
 <?php
-/**
- * Login - PetCare
- */
+
 require_once __DIR__ . '/../../includes/config.php';
 require_once __DIR__ . '/../../includes/auth.php';
 
-// Si ya está logueado, redirigir al dashboard
+
 if (isLoggedIn()) {
     header('Location: ' . APP_URL . '/index.php');
     exit;

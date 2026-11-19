@@ -1,19 +1,17 @@
 <?php
-/**
- * Dashboard principal - PetCare
- */
+
 require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/auth.php';
 require_once __DIR__ . '/includes/functions.php';
 
-// Requiere login antes de continuar
+
 requireLogin();
 
 require_once __DIR__ . '/includes/header.php';
 
 $pageTitle = 'Dashboard';
 
-// Estadísticas
+
 $db = getDB();
 $stats = [
     'clientes' => $db->query("SELECT COUNT(*) FROM clientes")->fetchColumn(),
@@ -22,7 +20,7 @@ $stats = [
     'consultas' => $db->query("SELECT COUNT(*) FROM consultas")->fetchColumn(),
 ];
 
-// Consultas recientes
+
 $stmt = $db->query("SELECT c.*, m.nombre as mascota_nombre, cli.nombre as cliente_nombre, cli.apellido as cliente_apellido 
                     FROM consultas c
                     JOIN mascotas m ON c.id_mascota = m.id_mascota
@@ -30,7 +28,7 @@ $stmt = $db->query("SELECT c.*, m.nombre as mascota_nombre, cli.nombre as client
                     ORDER BY c.fecha_consulta DESC LIMIT 5");
 $recentConsultas = $stmt->fetchAll();
 
-// Obtener datos del usuario desde la sesión (ahora seguro que existe por requireLogin)
+
 $userNombre = $_SESSION['user_nombre'] ?? 'Usuario';
 $userRol = $_SESSION['user_rol_nombre'] ?? 'Usuario';
 ?>

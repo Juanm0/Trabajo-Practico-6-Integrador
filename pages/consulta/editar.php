@@ -1,7 +1,5 @@
 ﻿<?php
-/**
- * Editar Consulta - PetCare
- */
+
 require_once dirname(__DIR__, 2) . '/includes/config.php';
 require_once dirname(__DIR__, 2) . '/includes/auth.php';
 require_once dirname(__DIR__, 2) . '/includes/functions.php';
@@ -20,14 +18,14 @@ if (!$consulta) {
     exit;
 }
 
-// Obtener mascotas con sus clientes
+
 $db = getDB();
 $stmt = $db->query("SELECT m.id_mascota, m.nombre, m.especie, c.nombre as cliente_nombre, c.apellido as cliente_apellido 
                     FROM mascotas m JOIN clientes c ON m.id_cliente = c.id_cliente 
                     ORDER BY c.apellido, c.nombre, m.nombre");
 $mascotas = $stmt->fetchAll();
 
-// Obtener veterinarios
+
 $stmt = $db->query("SELECT id_veterinario, nombre, apellido, especialidad, numero_registro FROM veterinarios ORDER BY apellido, nombre");
 $veterinarios = $stmt->fetchAll();
 

@@ -1,10 +1,8 @@
 <?php
-/**
- * Funciones CRUD para todas las entidades - PetCare
- */
+
 require_once __DIR__ . '/db.php';
 
-// ==================== CLIENTES ====================
+
 
 function getAllClientes($search = '') {
     $db = getDB();
@@ -45,7 +43,7 @@ function deleteCliente($id) {
     return $stmt->execute([$id]);
 }
 
-// ==================== MASCOTAS ====================
+
 
 function getAllMascotas($search = '') {
     $db = getDB();
@@ -98,7 +96,7 @@ function deleteMascota($id) {
     return $stmt->execute([$id]);
 }
 
-// ==================== VETERINARIOS ====================
+
 
 function getAllVeterinarios($search = '') {
     $db = getDB();
@@ -139,7 +137,7 @@ function deleteVeterinario($id) {
     return $stmt->execute([$id]);
 }
 
-// ==================== CONSULTAS ====================
+
 
 function getAllConsultas($search = '') {
     $db = getDB();
@@ -205,7 +203,7 @@ function deleteConsulta($id) {
     return $stmt->execute([$id]);
 }
 
-// ==================== USUARIOS ====================
+
 
 function getAllUsuarios() {
     $db = getDB();

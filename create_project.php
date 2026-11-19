@@ -1,3 +1,3 @@
 <?php  
-\$baseDir = 'D:/Programas/free-codex/petcare';  
+$baseDir = 'D:/Programas/free-codex/petcare';  
  
