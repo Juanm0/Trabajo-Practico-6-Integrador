@@ -9,9 +9,9 @@ define('DB_PASS', 'browtf1234isood');
 define('DB_CHARSET', 'utf8mb4');
 
 
-
-
-
+/**
+ * PARA QUE CORRA EN XAMPP HAY QUE PONER ESTOS VALORES PERO DE LOCALHOST, ACTUALMENTE ME LOS OLVIDÉ
+ */
 
 
 
