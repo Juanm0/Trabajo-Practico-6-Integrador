@@ -2,10 +2,10 @@
 
 
 
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'petcare');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_HOST', 'sql211.infinityfree.com');
+define('DB_NAME', 'if0_43012718_basetp5');
+define('DB_USER', 'if0_43012718');
+define('DB_PASS', 'browtf1234isood');
 define('DB_CHARSET', 'utf8mb4');
 
 
@@ -16,7 +16,7 @@ define('DB_CHARSET', 'utf8mb4');
 
 
 define('APP_NAME', 'PetCare');
-define('APP_URL', 'http://localhost/tpr'); 
+define('APP_URL', 'https://juanjuanjuan.freedev.app/'); 
 
 
 define('BASE_PATH', dirname(__DIR__));
