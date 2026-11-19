@@ -15,40 +15,12 @@ Diseñar e implementar webapp funcional en PHP conectada a la base de datos dise
 - **Despliegue**: El sistema debe estar subido y funcional en un hosting gratuito (ej. InfinityFree).
 - **Documentación**:  Incluir script de la base de datos en /database, usuarios de prueba y archivo README.md.
 
-## 🗂️ Modelo de datos
-
-La base de datos está compuesta por cuatro entidades principales:
-
-- **Clientes:** almacena los datos de los propietarios.
-- **Veterinarios:** contiene la información de los profesionales.
-- **Mascotas:** registra las mascotas asociadas a cada cliente.
-- **Consultas:** almacena las consultas veterinarias realizadas a las mascotas.
-
-## 📊 Diagrama Entidad-Relación (DER)
-
-![Diagrama Entidad-Relación de PetCare](assets/DER.jpeg)
-
-## 📄 Consigna del Trabajo Práctico
-
-[📥 Abrir consigna original en PDF](assets/consigna.pdf)
-
-## 📄 Guia complementaria
-
-[✌️ Abrir guía complementaria en PDF](assets/complement.pdf)
-
-## 💾 Archivos del proyecto
-
-| Archivo | Descripción |
-|---|---|
-| `tp5.sql` | Script SQL con la creación de la base de datos, tablas e inserción de datos. |
-| `assets/DER.png` | Diagrama Entidad-Relación exportado como imagen. |
-| `assets/consigna.pdf` | Documento original con las consignas del trabajo. |
-
 ## 🛠️ Herramientas utilizadas
 
+- PHP
 - MySQL
 - MySQL Workbench
 - XAMPP
 
 ---
-**Trabajo Práctico N.º 5 - Bases de Datos Relacionales**
+**Trabajo Práctico N.º 6 - INTEGRADOR**
